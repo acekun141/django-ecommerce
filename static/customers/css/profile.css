@@ -1,0 +1,76 @@
+.module-user {
+    border-right: 1px solid #dee2e6;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+.module-user img {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.module-user p {
+    display: flex;
+    padding-left: 15px;
+    font-weight: bold;
+    margin: 10px 0;
+    flex-direction: row;
+    align-items: center;
+}
+.module-user p i {
+    padding-right: 15px;
+    font-size: 2em;
+}
+.module-user a {
+    margin-top: 15px;
+    padding: 10px;
+    font-weight: bold;
+    align-self: flex-start;
+    margin-left: 15px;
+    border-radius: 0;
+    background-color: #19110b;
+    color: white;
+}
+
+.module-bill {
+
+}
+.module-bill .title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.module-bill .bill {
+    border: 1px solid #dee2e6;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+.module-bill .bill p {
+    margin: 0;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.module-bill .bill p i {
+    padding-right: 10px;
+}
+.module-bill .bill p:first-child {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.module-bill .bill .time {
+    font-size: 15px;
+    color: gray;
+    margin-bottom: 15px;
+}
+.module-bill .bill .status {
+    padding: 10px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    background-color: green;
+}
+.module-bill .bill .packing {
+    background-color: orange;
+}

@@ -1,0 +1,10 @@
+.module-product {}
+.module-product .add-to-bill {
+    transition: 0.3s ease-in-out;
+    background-color: #19110b;
+    color: #eae8e4;
+}
+.module-product .add-to-bill:hover {
+    background-color: #eae8e4 !important;
+    color: #19110b !important;
+}

@@ -1,0 +1,27 @@
+{% extends "shop/base.html" %}
+
+{% block title %}
+    Sign In
+{% endblock title %}
+
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'customers/css/sign.css' %}">
+{% endblock style %}
+
+{% block content %}
+    <div class="module-sign">
+    <form method="POST">
+        {% if errors %}
+            <p style="color: red">{{ errors }}</p>
+        {% endif %}
+        {% csrf_token %}
+        <p>Email</p>
+        <input type='email' required name='email' id='id_email'>
+        <p>Password</p>
+        <input type='password' required name='password' id='id_password'>
+
+        <button type='submit' class="btn btn-block btn-success">Sign In</button>
+    </form>
+    </div>
+{% endblock content %}

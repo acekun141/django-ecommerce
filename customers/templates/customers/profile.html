@@ -1,0 +1,88 @@
+{% extends "shop/base.html" %}
+
+{% block title %}
+    Profile
+{% endblock title %}
+
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'customers/css/profile.css' %}">
+{% endblock style %}
+
+{% block content %}
+    <div class="row">
+        <div class="module-user col-md-3">
+            <img src="{{ customer.avatar.url }}">
+            <p><i class="material-icons">label</i>{{ customer.first_name }} {{ customer.last_name}}</p>
+            <p><i class="material-icons">mail</i>{{ user.email }}</p>
+            <p><i class="material-icons">local_phone</i>{{ customer.phonenumber }}</p> 
+            <p><i class="material-icons">place</i>{{ customer.address }}</p>
+            <a href="#" class="btn btn-outline-dark">Edit Profile</a>
+        </div>
+        <div class="module-bill col-md-9">
+            <h2 class="title">Bills</h2>
+            <div class="bill">
+                <p>293d-298t-39f7-er94</p>
+                <p class="time"><i class="material-icons">access_time</i>5/2/2020 15:30</p>
+                <table class="table table-bordered table-products">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Products</th>
+                            <th scope="col">Prices</th>
+                        </tr>
+                    </thead>
+                    </tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td><a href="#">product-1</a></td>
+                            <td>250$</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><a href="#">product-2</a></td>
+                            <td>200$</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Prices</th>
+                            <td></td>
+                            <td><strong>450$</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="status">Shipping</p>
+            </div>
+            <div class="bill">
+                <p>293d-298t-39f7-er94</p>
+                <p class="time"><i class="material-icons">access_time</i>5/2/2020 15:30</p>
+                <table class="table table-bordered table-products">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Products</th>
+                            <th scope="col">Prices</th>
+                        </tr>
+                    </thead>
+                    </tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td><a href="#">product-1</a></td>
+                            <td>250$</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td><a href="#">product-2</a></td>
+                            <td>200$</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Prices</th>
+                            <td></td>
+                            <td><strong>450$</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="status packing">packing</p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

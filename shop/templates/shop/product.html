@@ -1,0 +1,37 @@
+
+{% extends "shop/base.html" %}
+
+{% block title %}
+    {{ product.name }}
+{% endblock title %}
+
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/css/product.css' %}">
+{% endblock style %}
+
+{% block content %}
+        <div class="module-product row flex-wrap-reverse">
+            <div class="col-md-8 border">
+                <div class="row d-flex justify-content-center">
+                    <div class="row col-12 d-flex p-0 justify-content-center">
+                        <img class="col-6 p-0" src="{{ product.image.url }}">                
+                    </div>
+                    {% for image in product.imageproduct_set.all %}
+                        <img class="col-6 p-0" src="{{ image.image.url }}">
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-4 p-0">
+                <div class="p-5 border-top border-bottom">
+                    <p class="mb-0 font-weight-bold" style="font-size:15px">{{ product.ver}}</p>
+                    <h1 class="font-weight-bolder mt-0">{{ product.name }}</h1>
+                    <p class="m-0 font-weight-bold">${{ product.price }}</p>
+                    <button class="btn btn-block mt-2 p-3 rounded-0 add-to-bill">Notify Me</button>             
+                </div>
+                <div class="p-5">
+                    <p class="font-weight-lighter text-dark" >{{ product.description }}</p>                      
+                </div>      
+            </div>
+        </div>
+{% endblock content %}

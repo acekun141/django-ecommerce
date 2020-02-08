@@ -1,0 +1,36 @@
+{% extends "shop/base.html" %}
+
+{% block title %}
+    Products
+{% endblock title %}
+
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'shop/css/shop.css' %}">
+{% endblock style %}
+
+{% block content %}
+    <div class="module-shop container-fluid p-0">
+        <div class="row pl-5 pr-5 border-top border-bottom">
+            <div class="count-product pt-4 pb-4 d-flex align-items-center">
+                <p class="m-0"><strong>Fragrances</strong> <span class="text-muted">{ {{ products|length }} products }</span></p>
+            </div>
+            <div class="filter pt-4 pb-4 pl-3 pr-3 ml-auto border-right border-left d-flex align-items-center">
+                <i class="material-icons" style="font-size: 30px">sort</i>
+                <p class="m-0 font-weight-bold" style="font-size: 14px">Filters</p>
+            </div>
+        </div>
+        <div class="row">
+            {% for product in products %}
+                {% comment %} ? {% endcomment %}
+                <a href="{% url 'product' product.pk %}" class="col-sm-6 col-md-4 border-bottom text-decoration-none shop-product">
+                    <img src="{{ product.image.url }}" style="width: 100%">
+                    <div class="shop-product-bottom">
+                        <p class="text-body font-weight-bold m-0">{{ product.name }}</p>
+                        <p class="text-body m-0" style="font-size: 12px">From ${{ product.price }}</p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

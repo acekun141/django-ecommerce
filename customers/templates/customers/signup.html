@@ -1,0 +1,29 @@
+{% extends "shop/base.html" %}
+
+{% block title %}
+    Sign Up
+{% endblock title %}
+
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'customers/css/sign.css' %}">
+{% endblock style %}
+
+{% block content %}
+    <div class='module-sign'>
+    {% for field in form %}
+        {{ field.errors }}
+    {% endfor %}
+    <form action="{% url 'signup' %}" method="POST">
+        {% csrf_token %}
+        <p>Email</p>
+        {{ form.email }}
+        <p>Password</p>
+        <input type="password" name="{{ form.password1.name }}" required id="{{ form.password1.id_for_label }}">
+        <p>Re-password</p>
+        <input type="password" name="{{ form.password2.name }}" required id="{{ form.password2.id_for_label }}">
+
+        <button type="submit" class="btn btn-block btn-success">Sign up</button>
+    </form>
+    </div>
+{% endblock content %}
